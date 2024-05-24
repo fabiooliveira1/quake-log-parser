@@ -3,7 +3,7 @@ import time
 
 start_time = time.time()
 
-pattern = re.compile('\d: (.*) killed (.*) by (.*)|(InitGame)')
+pattern = re.compile('\d: (.*) killed (.*) by (.*)|:\d+ (InitGame)')
 
 for line in open('qgames.log', 'r'):
     result = pattern.findall(line)
