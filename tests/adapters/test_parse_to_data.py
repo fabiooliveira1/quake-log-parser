@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock
-from adapters.parse_to_data import Parser
-from domain.game_interaction import GameInteraction
+from src.adapters.parse_to_data import Parser
+from src.domain.game_interaction import GameInteraction
 
 class TestParser(unittest.TestCase):
 

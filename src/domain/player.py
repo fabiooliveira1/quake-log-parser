@@ -1,4 +1,4 @@
-from helpers.utils import Utils
+from src.helpers.utils import Utils
 
 class Player:
     def __init__(self, name):
@@ -10,4 +10,4 @@ class Player:
         self.kills = self.kills + 1
     
     def decrease_score(self):
-        self.kills = self.kills + 1
+        self.kills = self.kills - 1

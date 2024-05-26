@@ -1,5 +1,5 @@
 import re
-from domain.game_interaction import GameInteraction
+from src.domain.game_interaction import GameInteraction
 
 class Parser:
     def __init__(self, callback):

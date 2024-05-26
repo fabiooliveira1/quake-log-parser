@@ -1,5 +1,5 @@
 dev:
-	python3 ./src/main.py
+	python3 ./main.py
 
 unit-tests:
 	python3 -m unittest discover .

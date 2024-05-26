@@ -13,7 +13,7 @@ This project is meant to read, parse and present the data contained in a Quake l
 # run project
 make dev
 # or
-python3 ./src/main.py
+python3 ./main.py
 
 # unit tests
 make unit-test

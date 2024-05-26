@@ -15,7 +15,7 @@ class TestController(unittest.TestCase):
         controller = Controller()
         controller.report.game_report = Mock()
 
-        controller.populate_history()
+        controller.get_game_report()
 
         controller.report.game_report.assert_called_once()
 
@@ -23,7 +23,7 @@ class TestController(unittest.TestCase):
         controller = Controller()
         controller.report.player_ranking = Mock()
 
-        controller.populate_history()
+        controller.get_player_ranking()
 
         controller.report.player_ranking.assert_called_once()
 
@@ -31,7 +31,7 @@ class TestController(unittest.TestCase):
         controller = Controller()
         controller.report.all_kills_by_means = Mock()
 
-        controller.populate_history()
+        controller.get_all_kills_by_means()
 
         controller.report.all_kills_by_means.assert_called_once()
 

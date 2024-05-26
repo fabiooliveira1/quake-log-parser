@@ -81,7 +81,7 @@ class TestReport(unittest.TestCase):
 
         report._print_dict.assert_called_once_with(expected)
     
-    def _populate_history():
+    def _populate_history(self):
         interactions = [
             GameInteraction('', '', '', 'InitGame'),
             GameInteraction('foo', 'bar', 'MOD_RAILGUN', ''),

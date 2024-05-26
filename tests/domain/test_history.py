@@ -19,7 +19,7 @@ class TestHistory(unittest.TestCase):
         history.add_game()
 
         self.assertEqual('game_1', history.games[0].id)
-        self.assertEqual('game_2', history.games[0].id)
+        self.assertEqual('game_2', history.games[1].id)
 
     def test_add_player(self):
         history = History()
@@ -135,7 +135,6 @@ class TestHistory(unittest.TestCase):
 
         history.games[0].decrease_player_score = Mock()
         history.games[0].increase_player_score = Mock()
-        history.games[0].add_player = Mock()
         history.games[0].increase_kill_by_mean = Mock()
 
         history.handle_interaction(interaction)
@@ -143,20 +142,15 @@ class TestHistory(unittest.TestCase):
         history.add_game.assert_not_called()
         history.decrease_player_score.assert_called()
         history.increase_player_score.assert_not_called()
-        history.add_player.assert_called()
         history.increase_kill_by_mean.assert_called()
 
         history.games[0].decrease_player_score.assert_called()
         history.games[0].increase_player_score.assert_not_called()
-        history.games[0].add_player.assert_called()
         history.games[0].increase_kill_by_mean.assert_called()
 
         self.assertNotEqual(
             history.decrease_player_score.call_args[0],
             history.games[0].decrease_player_score.call_args[0])
-        self.assertNotEqual(
-            history.add_player.call_args[0],
-            history.games[0].add_player.call_args[0])
         self.assertEqual(
             history.increase_kill_by_mean.call_args[0],
             history.games[0].increase_kill_by_mean.call_args[0])
@@ -169,12 +163,10 @@ class TestHistory(unittest.TestCase):
         history.add_game = Mock()
         history.decrease_player_score = Mock()
         history.increase_player_score = Mock()
-        history.add_player = Mock()
         history.increase_kill_by_mean = Mock()
 
         history.games[0].decrease_player_score = Mock()
         history.games[0].increase_player_score = Mock()
-        history.games[0].add_player = Mock()
         history.games[0].increase_kill_by_mean = Mock()
 
         history.handle_interaction(interaction)
@@ -182,20 +174,15 @@ class TestHistory(unittest.TestCase):
         history.add_game.assert_not_called()
         history.decrease_player_score.assert_not_called()
         history.increase_player_score.assert_called()
-        history.add_player.assert_called()
         history.increase_kill_by_mean.assert_called()
 
         history.games[0].decrease_player_score.assert_not_called()
         history.games[0].increase_player_score.assert_called()
-        history.games[0].add_player.assert_called()
         history.games[0].increase_kill_by_mean.assert_called()
 
         self.assertNotEqual(
             history.increase_player_score.call_args[0],
-            history.games[0].decrease_player_score.call_args[0])
-        self.assertNotEqual(
-            history.add_player.call_args[0],
-            history.games[0].add_player.call_args[0])
+            history.games[0].increase_player_score.call_args[0])
         self.assertEqual(
             history.increase_kill_by_mean.call_args[0],
             history.games[0].increase_kill_by_mean.call_args[0])

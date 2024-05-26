@@ -1,7 +1,7 @@
-from usecase.report import Report
-from domain.history import History
-from adapters.parse_to_data import Parser
-from adapters.reader import Reader
+from src.usecase.report import Report
+from src.domain.history import History
+from src.adapters.parse_to_data import Parser
+from src.adapters.reader import Reader
 
 class Controller:
     def __init__(self):

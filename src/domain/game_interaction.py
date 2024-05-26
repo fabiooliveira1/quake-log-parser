@@ -10,3 +10,12 @@ class GameInteraction:
     
     def is_world_kill(self):
         return self.killer == '<world>'
+
+    def __eq__(self, other):
+        if isinstance(other, GameInteraction):
+            return (self.killer == other.killer and
+                self.victim == other.victim and
+                self.mean == other.mean and
+                self.new_game == other.new_game)
+
+        return False
