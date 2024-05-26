@@ -1,4 +1,4 @@
-from helpers import utils
+from helpers.utils import Utils
 class Report:
     def __init__(self, history):
         self.history = history
@@ -42,4 +42,4 @@ class Report:
         self._print_dict(ranking)
 
     def _print_dict(self, dict):
-        print(utils.Utils().dict_to_json(dict))
+        print(Utils().dict_to_json(dict))

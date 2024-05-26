@@ -1,8 +1,8 @@
-from helpers import utils
+from helpers.utils import Utils
 
 class Player:
     def __init__(self, name):
-        self.id = utils.Utils().sanitize(name)
+        self.id = Utils().sanitize(name)
         self.name = name
         self.kills = 0
     

@@ -1,5 +1,5 @@
 import re
-from domain import game_interaction
+from domain.game_interaction import GameInteraction
 
 class Parser:
     def __init__(self, callback):
@@ -9,5 +9,5 @@ class Parser:
     def parse(self, line):
         result = self.pattern.findall(line)
         if result and result[0]:
-            self.callback(game_interaction.GameInteraction(*result[0]))
+            self.callback(GameInteraction(*result[0]))
     

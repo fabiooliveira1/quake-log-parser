@@ -1,13 +1,14 @@
-from usecase import report
-from domain import history
-from adapters import parse_to_data, reader
+from usecase.report import Report
+from domain.history import History
+from adapters.parse_to_data import Parser
+from adapters.reader import Reader
 
 class Controller:
     def __init__(self):
-        self.history = history.History()
-        self.parser = parse_to_data.Parser(self.history.handle_interaction)
-        self.reader = reader.Reader('src/static/qgames.log', self.parser.parse)
-        self.report = report.Report(self.history)
+        self.history = History()
+        self.parser = Parser(self.history.handle_interaction)
+        self.reader = Reader('src/static/qgames.log', self.parser.parse)
+        self.report = Report(self.history)
     
     def populate_history(self):
         self.reader.read_all()
