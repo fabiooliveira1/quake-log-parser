@@ -1,6 +1,6 @@
 # Quake Log Parser
 
-This project is meant to be able to read, parse and present the data contained in a Quake log
+This project is meant to read, parse and present the data contained in a Quake log
 
 ## Dependencies
 
