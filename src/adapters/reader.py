@@ -4,6 +4,8 @@ class Reader:
         self.parser = parser
 
     def read_all(self):
-        for line in open(self.path, 'r'):
+        stream = open(self.path, 'r')
+        for line in stream:
             self.parser(line)
 
+        stream.close()

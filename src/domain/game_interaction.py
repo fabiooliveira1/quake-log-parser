@@ -10,5 +10,3 @@ class GameInteraction:
     
     def is_world_kill(self):
         return self.killer == '<world>'
-
-

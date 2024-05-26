@@ -1,7 +1,7 @@
-from controller import controller
+from controller.controller import Controller
 
 def main ():
-    controller_instance = controller.Controller()
+    controller_instance = Controller()
 
     controller_instance.populate_history()
 
